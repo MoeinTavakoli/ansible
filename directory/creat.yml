@@ -1,0 +1,11 @@
+---
+- hosts: test
+  tasks:
+    - name: create files
+      file:
+        path: /home/moeen.tavakoli/ansible-{{ item }}
+        state: directory
+      loop:
+        - sample1
+        - sample2
+        - sample3
