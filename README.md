@@ -28,11 +28,11 @@ install ansible and dependeny in control machine
 
 install openssh on nodes
 
-```
+```bash
 sudo apt-get install openssh-server
 sudo systemctl enable ssh
-sudo systemctl start ssh
-sudo systemctl status ssh
+sudo systemctl start ssh # start ssh
+sudo systemctl status ssh # check status
 ```
 
 ##  step 3
@@ -53,7 +53,6 @@ default directory for save ssh-key is `~/.ssh` so we create this directory .
 ```
 ssh USERNAME@IP-OR-HOSTNMAE
 mkdir -p .ssh
-exit
 ```
 
 we want to make secure connection on controll machine and nodes so send public key of the controll machine to all nodes 
