@@ -46,3 +46,16 @@ it create two key
 1-private key --> id_rsa
 
 2- public key --> id_rsa.pub
+
+
+default directory for save ssh-key is `~/.ssh` so we create this directory .
+
+```
+ssh USERNAME@IP-OR-HOSTNMAE
+mkdir -p .ssh
+exit
+```
+
+we want to make secure connection on controll machine and nodes so send public key of the controll machine to all nodes 
+
+`ssh-copy-id -i id_rsa.pub USERNAME@IP-OR-HOSTNMAE`
