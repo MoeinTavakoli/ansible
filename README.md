@@ -59,3 +59,14 @@ exit
 we want to make secure connection on controll machine and nodes so send public key of the controll machine to all nodes 
 
 `ssh-copy-id -i id_rsa.pub USERNAME@IP-OR-HOSTNMAE`
+
+now we have secure connection between controll machine and nodes 
+
+
+## define groups in ansible
+
+
+
+add some groups in make easier for us to manage and  grouping all nodes
+groups define in `/etc/ansible/hosts` and there are lots of defualt groups that is comment.
+
