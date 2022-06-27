@@ -8,6 +8,8 @@ We have 2 type of servers :
 2. nodes
 
 
+[whats ansible ?](https://www.ansible.com/)
+
 When we want to use ansible there are some step to do it 
 
 let`s do it 
@@ -132,4 +134,3 @@ Control machine recive data and print number of changes
 
 
 [official ansible doc](https://docs.ansible.com/)
-
