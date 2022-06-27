@@ -83,3 +83,21 @@ network-master-1.psg.network ansible_host=192.168.50.1 ansible_user=moeen.tavako
 network-slave-2.psg.network ansible_host=192.168.49.57 ansible_user=moeen.tavakoli
 ```
 
+to check add groups and nodes use this command to see all nodes that you added 
+
+`ansible --list-hosts all`
+
+this command pring list of groups and hosts that you added into groups  
+
+
+## check connection
+
+there many ways to check connection but easy way to check connection is use `ping` option 
+
+`ansible -m ping all`
+
+
+this command send request to check status of connection.
+
+this command return  obejct that send  response to see all connection status and some message 
+the most property of response is status that we want to recive `SUCCESS`
