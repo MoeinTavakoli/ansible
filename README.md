@@ -4,7 +4,7 @@ ansible is tools that can help us to automate IT tasks
 
 we have 2 type of servers : 
 
-1. controll machin 
+1. control machin 
 2. nodes
 
 
@@ -37,7 +37,7 @@ sudo systemctl status ssh # check status
 
 ##  step 3
 
-create keys (public and private key) in controll machine 
+create keys (public and private key) in control machine 
 
 `ssh-keygen -t rsa`
 
@@ -55,11 +55,11 @@ ssh USERNAME@IP-OR-HOSTNMAE
 mkdir -p .ssh
 ```
 
-we want to make secure connection on controll machine and nodes so send public key of the controll machine to all nodes 
+we want to make secure connection on control machine and nodes so send public key of the control machine to all nodes 
 
 `ssh-copy-id -i id_rsa.pub USERNAME@IP-OR-HOSTNMAE`
 
-now we have secure connection between controll machine and nodes 
+now we have secure connection between control machine and nodes 
 
 
 ## define groups in ansible
@@ -100,3 +100,30 @@ this command send request to check status of connection.
 
 this command return  obejct that send  response to see all connection status and some message 
 the most property of response is status that we want to recive `SUCCESS`
+
+
+### execute commands in nodes
+when we have secure connection on control machine and nodes , we can excute command from control machine and excute on nodes then see all changes on control machine
+so we push commands from control machine and expect to execute on nodes (group or all) then return changes and see all response in control machine 
+
+we can use this command to send command that called `modules`
+
+`ansible all-or-groupName -a "COMMANDS"`
+
+for example
+
+`ansible Network -a "echo $HOSTNAME"`
+
+this command retrun have 4 step 
+
+### step 1
+send this script (`echo $HOSTNAME`) into all nodes that memeber of `Network` group 
+
+### step 2 
+excute script (`echo $HOSTNAME`)
+
+### step 3 
+return changes or print data that returns from nodes into control machine 
+
+### step 4 
+control machine recive data and print number of changes
