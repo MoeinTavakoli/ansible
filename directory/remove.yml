@@ -1,0 +1,13 @@
+---
+- hosts: test
+  # become: yes
+  # become_user: root
+  tasks:
+    - name: remove directory in home directory
+      file:
+        path: /home/moeen.tavakoli/ansible-{{ item }}
+        state: absent
+      loop:
+        - sample1
+        - sample2
+        - sample3
