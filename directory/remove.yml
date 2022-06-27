@@ -1,7 +1,5 @@
 ---
 - hosts: test
-  # become: yes
-  # become_user: root
   tasks:
     - name: remove directory in home directory
       file:
