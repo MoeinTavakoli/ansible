@@ -69,4 +69,17 @@ now we have secure connection between controll machine and nodes
 
 add some groups in make easier for us to manage and  grouping all nodes
 groups define in `/etc/ansible/hosts` and there are lots of defualt groups that is comment.
+if we want to add groups must be edit this file and add groups like commented groups 
+
+there are many syntax to define nodes 
+
+popular syntax is \
+`HOSTNAME ansible_host=IP ansible_user=USERNAME `
+
+```
+[network]
+
+network-master-1.psg.network ansible_host=192.168.50.1 ansible_user=moeen.tavakoli
+network-slave-2.psg.network ansible_host=192.168.49.57 ansible_user=moeen.tavakoli
+```
 
