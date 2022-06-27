@@ -1,0 +1,10 @@
+---
+- hosts: test
+  become : yes
+  become_user: root
+  tasks:
+    - name: Replace after the expression till the end of the file (requires Ansible >= 2.4)
+      ansible.builtin.replace:
+        path: /home/moeen.tavakoli/ip
+        regexp: '^127\.0\.0\.1'
+        replace: '# \ye-kalame-replace'
