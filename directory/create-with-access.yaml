@@ -1,0 +1,9 @@
+---
+- hosts : test
+  become: yes
+  become_user : root
+  tasks:
+    - name : create sample file in home directory 
+      file :
+        path: /etc/chert
+        state : directory
