@@ -41,7 +41,7 @@ Create keys (public and private key) in control machine
 
 `ssh-keygen -t rsa`
 
-it create two key 
+this command generate two ssh-key 
 
 1-private key --> id_rsa
 
