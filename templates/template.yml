@@ -1,0 +1,7 @@
+---
+- hosts: test
+  tasks:
+    - name: template file to remote host
+      template:                 # Ansible template module
+        src: "app.conf.j2"      # This is template src i.e source location 
+        dest: "/home/moeen.tavakoli/"   # Destination of Remote host
