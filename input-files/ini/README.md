@@ -17,3 +17,16 @@ password=12345
 ```
 
 in this case we define a section with name auth for authentication information.
+
+In Ansible we can access to the data in ini file with `lookup`
+
+syntax :
+
+`lookup('ansible.builtin.ini', 'KEY', section='Section_name', file='PATH+file_name.ini')`
+
+for example : 
+
+
+`{{ lookup('ansible.builtin.ini', 'username', section='auth', file='password.ini') }}`
+
+we this line we can access username in section auth at the password.ini file.
