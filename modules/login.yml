@@ -12,5 +12,3 @@
         body:
           username : '{{ username }}'
           password : '{{ password }}'
-
-          
