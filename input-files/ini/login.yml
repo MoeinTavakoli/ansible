@@ -1,9 +1,9 @@
 ---
 - hosts: test
   tasks:
-    - name: send request to monia server and expect 200 status code
+    - name: send request to server and expect 200 status code
       ansible.builtin.uri:
-        url: http://192.168.50.36:8090/user/login
+        url: http://{{ lookup('ansible.builtin.ini', 'ip-server', section='auth', file='password.ini') }}:8090/user/login
         method : POST
         body_format: json
         body:
