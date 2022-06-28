@@ -2,7 +2,9 @@
 - hosts: test
   tasks:
     - name: send request to monia server and expect 200 status code
+      vars : 
+        token : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJyb2xlIjoiUk9PVCIsInVzZXJJRCI6IjNiMTdiNjc2LWQ3ZmYtNDdkMy05ZDFkLTgzNWQ0ZDlkNTY1MSIsImlhdCI6MTY1NjMzMzI0OH0.PYsn1AKra8XUTZOB9bDejF5t74gRY9bJZ7mw-UJe-UA'
       ansible.builtin.uri:
         url: http://192.168.50.36:8090/user/info
         headers:
-          Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJyb2xlIjoiUk9PVCIsInVzZXJJRCI6IjNiMTdiNjc2LWQ3ZmYtNDdkMy05ZDFkLTgzNWQ0ZDlkNTY1MSIsImlhdCI6MTY1NjMzMzI0OH0.PYsn1AKra8XUTZOB9bDejF5t74gRY9bJZ7mw-UJe-UA"
+          Authorization: "{{token}}"
