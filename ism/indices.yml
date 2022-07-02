@@ -1,0 +1,12 @@
+---
+- hosts: test
+  tasks:
+    - name: get all indices expect 200 status code
+      ansible.builtin.uri:
+        url: https://admin:admin@192.168.50.17:9200/_cat/indices
+        method : GET
+        headers : 
+          Content-Type: application/json
+        validate_certs: no
+        return_content : yes
+        
