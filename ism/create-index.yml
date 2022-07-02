@@ -7,7 +7,7 @@
         method : PUT
         headers : 
           Content-Type: application/json
-        body : "{{ lookup('ansible.builtin.file','create_index.json') }}"
+        body : "{{ lookup('ansible.builtin.file','./json_files/create_index.json') }}"
         validate_certs: no
         return_content : yes
         body_format : json

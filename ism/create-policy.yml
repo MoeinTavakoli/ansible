@@ -7,7 +7,7 @@
         method : PUT
         headers : 
           Content-Type: application/json
-        body : "{{ lookup('ansible.builtin.file','create_policy.json') }}"
+        body : "{{ lookup('ansible.builtin.file','./json_files/create_policy.json') }}"
         validate_certs: no
         return_content : yes
         body_format : json
