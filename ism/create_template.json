@@ -1,0 +1,8 @@
+{
+    "index_patterns": [
+      "create_index*"
+      ],
+    "settings": {
+      "plugins.index_state_management.rollover_alias": "create_index*"
+    }
+  }
