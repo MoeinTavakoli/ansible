@@ -3,7 +3,7 @@
   tasks:
     - name: get all indices expect 200 status code
       ansible.builtin.uri:
-        url: https://admin:admin@192.168.50.17:9200/_cat/indices
+        url: https://{{ lookup('ansible.builtin.ini', 'username', section='ism', file='auth.ini') }}:{{ lookup('ansible.builtin.ini', 'password', section='ism', file='auth.ini') }}@{{ lookup('ansible.builtin.ini', 'ip', section='ism', file='auth.ini') }}:{{ lookup('ansible.builtin.ini', 'port', section='ism', file='auth.ini') }}/_cat/indices
         method : GET
         headers : 
           Content-Type: application/json
