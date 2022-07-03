@@ -10,7 +10,7 @@
           method : PUT
           headers : 
             Content-Type: application/json
-          body : "{{ lookup('template', './template.j2') }}"
+          body : "{{ lookup('template', '../json_files/create_policy.j2') }}"
           validate_certs: no
           return_content : yes
           body_format : json

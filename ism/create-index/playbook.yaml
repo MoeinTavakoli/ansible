@@ -5,13 +5,12 @@
       index_name: sample_index
    
     tasks:
-        
       - ansible.builtin.uri:
           url: https://admin:admin@192.168.50.17:9200/{{ index_name }}          
           method : PUT
           headers : 
             Content-Type: application/json
-          body : "{{ lookup('template', './template.j2') }}"
+          body : "{{ lookup('template', '../json_files/create_index.j2') }}"
           validate_certs: no
           return_content : yes
           body_format : json
