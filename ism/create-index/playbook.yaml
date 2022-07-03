@@ -15,6 +15,3 @@
           validate_certs: no
           return_content : yes
           body_format : json
-
-
-          # url: https://admin:admin@192.168.50.17:9200/sample_sample_net
