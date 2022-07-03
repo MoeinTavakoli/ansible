@@ -1,0 +1,20 @@
+---
+  - hosts: localhost
+    vars:
+      alias_name: sample_alias
+      index_name: sample_index
+   
+    tasks:
+        
+      - ansible.builtin.uri:
+          url: https://admin:admin@192.168.50.17:9200/{{ index_name }}          
+          method : PUT
+          headers : 
+            Content-Type: application/json
+          body : "{{ lookup('template', './template.j2') }}"
+          validate_certs: no
+          return_content : yes
+          body_format : json
+
+
+          # url: https://admin:admin@192.168.50.17:9200/sample_sample_net
