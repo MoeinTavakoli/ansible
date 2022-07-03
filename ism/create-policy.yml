@@ -1,38 +1,44 @@
 ---
-- hosts: test
-  tasks:
-    - name: create policy 
-      ansible.builtin.uri:
-        url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url', section='config', file='ism.ini') }}/_plugins/_ism/policies/{{ lookup('ansible.builtin.ini', 'policy_name', section='policy', file='ism.ini') }}
-        method : PUT
-        headers : 
-          Content-Type: application/json
-        body : "{{ lookup('ansible.builtin.file','./json_files/create_policy.json') }}"
-        validate_certs: no
-        return_content : yes
-        body_format : json
-        status_code : 201
+  - hosts: localhost
+    vars:
+      
+      policy_name: sample_policy
+      index_name: sample_index
 
+      template_name: sample_template
+      alias_name: sample_alias
 
-    - name: create template
-      ansible.builtin.uri:
-        url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url', section='config', file='ism.ini') }}/_template/{{ lookup('ansible.builtin.ini', 'template_name', section='policy', file='ism.ini') }}
-        method : PUT
-        headers : 
-          Content-Type: application/json
-        body : "{{ lookup('ansible.builtin.file','./json_files/create_template.json') }}"
-        validate_certs: no
-        return_content : yes
-        body_format : json
-    
+    tasks:
+      - name : create policy 
+        ansible.builtin.uri:
+          url: https://admin:admin@192.168.50.17:9200/_plugins/_ism/policies/{{ policy_name }}          
+          method : PUT
+          headers : 
+            Content-Type: application/json
+          body : "{{ lookup('template', './templates/create_policy.j2') }}"
+          validate_certs: no
+          return_content : yes
+          body_format : json
+          status_code : 201
 
-    - name: create index 
-      ansible.builtin.uri:
-        url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url', section='config', file='ism.ini') }}/{{ lookup('ansible.builtin.ini', 'index_name', section='policy', file='ism.ini') }}
-        method : PUT
-        headers : 
-          Content-Type: application/json
-        body : "{{ lookup('ansible.builtin.file','./json_files/create_index.json') }}"
-        validate_certs: no
-        return_content : yes
-        body_format : json
+      - name : create template 
+        ansible.builtin.uri:
+          url: https://admin:admin@192.168.50.17:9200/_template/{{ template_name }}          
+          method : PUT
+          headers : 
+            Content-Type: application/json
+          body : "{{ lookup('template', './templates/create_template.j2') }}"
+          validate_certs: no
+          return_content : yes
+          body_format : json
+
+      - name:  create index
+        ansible.builtin.uri:
+          url: https://admin:admin@192.168.50.17:9200/{{ index_name }}          
+          method : PUT
+          headers : 
+            Content-Type: application/json
+          body : "{{ lookup('template', './templates/create_index.j2') }}"
+          validate_certs: no
+          return_content : yes
+          body_format : json
