@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## ansible
 
 Ansible is tools that can help us to automate IT tasks 
@@ -136,3 +137,7 @@ Control machine recive data and print number of changes
 [official ansible doc](https://docs.ansible.com/)
 
 [ansible tutorial](https://www.tutorialspoint.com/ansible/index.htm)
+=======
+# ansible-test
+this repo just for test ansible
+>>>>>>> bbd1be56703713a43b4345814a2dd1d4b82f381e
