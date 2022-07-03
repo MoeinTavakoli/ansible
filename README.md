@@ -140,4 +140,3 @@ Control machine recive data and print number of changes
 =======
 # ansible-test
 this repo just for test ansible
->>>>>>> bbd1be56703713a43b4345814a2dd1d4b82f381e
