@@ -132,7 +132,6 @@ Control machine recive data and print number of changes
 
 [ansible toturial on yt](https://www.youtube.com/watch?v=5hycyr-8EKs)
 
-
 [official ansible doc](https://docs.ansible.com/)
 
 [ansible tutorial](https://www.tutorialspoint.com/ansible/index.htm)
