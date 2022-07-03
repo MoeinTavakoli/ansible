@@ -19,7 +19,7 @@ let`s do it
 Install ansible and dependeny in control machine
 
 
-```
+```sh
 sudo apt-get update
 sudo apt-get install software-properties-common
 sudo apt-add-repository ppa:ansible/ansible
@@ -77,7 +77,7 @@ There are many syntax to define nodes
 Popular syntax is \
 `HOSTNAME ansible_host=IP ansible_user=USERNAME `
 
-```
+```ini
 [network]
 
 network-master-1.psg.network ansible_host=192.168.50.1 ansible_user=moeen.tavakoli
