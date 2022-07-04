@@ -1,43 +1,42 @@
 {
-    "policy": {
-      "description": "fluentd hot warm workflow",
-      "default_state": "hot",
-      "schema_version": 1,
-      "states": [
-        {
-          "name": "hot",
-          "actions": [
-            {
-              "replica_count": {
-                  "number_of_replicas": 2
-              },
-              "rollover": {
-                  "min_index_age": "10m",
-                  "min_doc_count": 20
-              }
+  "policy": {
+    "description": "fluentd hot warm workflow",
+    "default_state": "hot",
+    "schema_version": 1,
+    "states": [
+      {
+        "name": "hot",
+        "actions": [
+          {
+            "replica_count": {
+                "number_of_replicas": 2
+            },
+            "rollover": {
+                "min_doc_count": 20
+
             }
-          ],
-          "transitions": [
-            {
-              "state_name": "warm"
+          }
+        ],
+        "transitions": [
+          {
+            "state_name": "warm"
+          }
+        ]
+      },
+      {
+        "name": "warm",
+        "actions": [
+          {
+            "replica_count": {
+                "number_of_replicas": 1
             }
-          ]
-        },
-        {
-          "name": "warm",
-          "actions": [
-            {
-              "replica_count": {
-                  "number_of_replicas": 1
-              }
-            }
-          ],
-          "transitions": []
-        }
-      ],
-      "ism_template": {
-        "index_patterns": ["{{ index_name }}"]
+          }
+        ],
+        "transitions": []
       }
+    ],
+    "ism_template": {
+      "index_patterns": ["{{ index_name }}*"]
     }
   }
-  
+}
