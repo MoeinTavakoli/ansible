@@ -1,13 +1,12 @@
 ---
   - hosts: localhost
     vars:
-      
-      policy_name: sample_policy
-      index_name: sample_index
-
-      template_name: sample_template
-      alias_name: sample_alias
-
+      policy_name: qe-policy
+      index_name: qe
+      index_pattern : "-netflow-000001"
+      template_name: qe-template
+      alias_name: qe-alias
+ 
     tasks:
       - name : create policy 
         ansible.builtin.uri:
@@ -34,7 +33,7 @@
 
       - name:  create index
         ansible.builtin.uri:
-          url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url', section='config', file='ism.ini') }}/{{ index_name }}          
+          url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url', section='config', file='ism.ini') }}/{{ index_name }}{{ index_pattern }}          
           method : PUT
           headers : 
             Content-Type: application/json
