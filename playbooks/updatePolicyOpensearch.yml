@@ -1,0 +1,18 @@
+# ansible-playbook  -e host=test/all  -i inventory/part-dev --become 
+# --become-method=sudo  --ask-pass  --ask-become-pass --ask-vault-pass  
+# playbooks/changeMonitoringConfig.yml -e org=partnew -e gpu=False 
+
+---
+- hosts: local
+  vars:
+    ansible_hostname: "{{ inventory_hostname }}" 
+    policy_name: wa-policy
+    index_name: wa
+    index_pattern : "-netflow-000001"
+    template_name: wa-template
+    alias_name: wa-alias
+
+  roles:
+    - role: updatePolicy 
+
+
