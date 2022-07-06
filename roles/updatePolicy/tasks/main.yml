@@ -1,3 +1,4 @@
 ---
-# - include_tasks: createFiles.yml
-# - include_tasks: removeFiles.yml
+- include_tasks: createPolicy.yml
+- include_tasks: createIndex.yml
+- include_tasks: createTemplate.yml

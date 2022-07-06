@@ -1,0 +1,10 @@
+- name : create template 
+  ansible.builtin.uri:
+    url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url-cluster-test', section='config', file='ism.ini') }}/_template/{{ template_name }}          
+    method : PUT
+    headers : 
+      Content-Type: application/json
+    body : "{{ lookup('template', './templates/create_template.j2') }}"
+    validate_certs: no
+    return_content : yes
+    body_format : json

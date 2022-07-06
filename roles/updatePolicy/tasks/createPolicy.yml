@@ -1,0 +1,11 @@
+- name : create policy 
+  ansible.builtin.uri:
+    url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url-cluster-test', section='config', file='ism.ini') }}/_plugins/_ism/policies/{{ policy_name }}          
+    method : PUT
+    headers : 
+      Content-Type: application/json
+    body : "{{ lookup('template', './templates/create_policy.j2') }}"
+    validate_certs: no
+    return_content : yes
+    body_format : json
+    status_code : 201
