@@ -1,5 +1,5 @@
 ---
-  - hosts: localhost
+  - hosts: test
     vars:
       policy_name: qe-policy
       index_name: qe
