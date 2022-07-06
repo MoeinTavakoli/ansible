@@ -7,6 +7,6 @@
   vars:
     ansible_hostname: "{{ inventory_hostname }}" 
   roles:
-    - role: changeMonitoringConfig 
+    - role: updatePolicy 
 
 
