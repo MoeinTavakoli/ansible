@@ -1,4 +1,4 @@
-[network]
-
-network-master-1.psg.network ansible_host=192.168.50.1 ansible_user=moeen.tavakoli
-network-slave-2.psg.network ansible_host=192.168.49.57 ansible_user=moeen.tavakoli
+[test]
+moeen-System-Product-Name ansible_host=127.0.0.1 ansible_user=moeen
+monia-slave-12-dev.part3.psg.network ansible_host=192.168.49.56 ansible_user=moeen.tavakoli
+monia-slave-13-dev.part3.psg.network ansible_host=192.168.49.57 ansible_user=moeen.tavakoli

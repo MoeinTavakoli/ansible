@@ -1,5 +1,0 @@
----
-- hosts: test
-  tasks:
-    - name: read data from ini file
-      ansible.builtin.debug: msg="User in auth is {{ lookup('ansible.builtin.ini', 'username', section='auth', file='password.ini') }} and password is {{ lookup('ansible.builtin.ini', 'password', section='auth', file='password.ini') }}"

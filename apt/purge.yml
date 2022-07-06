@@ -1,9 +1,0 @@
----
-  - name : unistall-funny-package
-    hosts : test
-    become: yes
-    become_user: root
-
-    tasks : 
-      - name: unistall cowsay 
-        action :   apt pkg=cowsay state=absent
