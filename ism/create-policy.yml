@@ -10,7 +10,7 @@
     tasks:
       - name : create policy 
         ansible.builtin.uri:
-          url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url', section='config', file='ism.ini') }}/_plugins/_ism/policies/{{ policy_name }}          
+          url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url-cluster-test', section='config', file='ism.ini') }}/_plugins/_ism/policies/{{ policy_name }}          
           method : PUT
           headers : 
             Content-Type: application/json
@@ -22,7 +22,7 @@
 
       - name : create template 
         ansible.builtin.uri:
-          url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url', section='config', file='ism.ini') }}/_template/{{ template_name }}          
+          url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url-cluster-test', section='config', file='ism.ini') }}/_template/{{ template_name }}          
           method : PUT
           headers : 
             Content-Type: application/json
@@ -33,7 +33,7 @@
 
       - name:  create index
         ansible.builtin.uri:
-          url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url', section='config', file='ism.ini') }}/{{ index_name }}{{ index_pattern }}          
+          url: https://{{ lookup('ansible.builtin.ini', 'auth', section='config', file='ism.ini') }}@{{ lookup('ansible.builtin.ini', 'url-cluster-test', section='config', file='ism.ini') }}/{{ index_name }}{{ index_pattern }}          
           method : PUT
           headers : 
             Content-Type: application/json
