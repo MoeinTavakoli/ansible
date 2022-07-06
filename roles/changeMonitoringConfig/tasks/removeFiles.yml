@@ -1,0 +1,8 @@
+- name: remove files
+  file:
+    path: ~/ansible-{{ item }}
+    state: absent
+  loop:
+    - sample1.txt
+    - sample2
+    - sample3

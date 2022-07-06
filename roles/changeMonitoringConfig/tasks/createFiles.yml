@@ -1,0 +1,8 @@
+- name: create files
+  file:
+    path: ~/ansible-{{ item }}
+    state: touch
+  loop:
+    - sample1.txt
+    - sample2
+    - sample3

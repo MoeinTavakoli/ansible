@@ -1,0 +1,12 @@
+# ansible-playbook  -e host=test/all  -i inventory/part-dev --become 
+# --become-method=sudo  --ask-pass  --ask-become-pass --ask-vault-pass  
+# playbooks/changeMonitoringConfig.yml -e org=partnew -e gpu=False 
+
+---
+- hosts: test
+  vars:
+    ansible_hostname: "{{ inventory_hostname }}" 
+  roles:
+    - role: changeMonitoringConfig 
+
+
