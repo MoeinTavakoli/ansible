@@ -10,7 +10,7 @@ we can use this feature when we want to run an ansible playbook .
 
 this ability called `ansible-vault` and has several option to use it 
 
-<ul>
+<ol>
   <li>create</li>
   <li>decrypt</li>
   <li>edit</li>
@@ -18,7 +18,7 @@ this ability called `ansible-vault` and has several option to use it
   <li>encrypt</li>
   <li>encrypt_string</li>
   <li>rekey</li>
-</ul>
+</ol>
 
 ## Create new encrypted Files
 
@@ -62,3 +62,33 @@ and ask your vault password to decrypt it and print it .
 
 **in this case didnt change your encrypted file**.
 
+
+## encrypted Files
+
+when you have a file and you want to encrypt this file and data .
+
+In this case you can use option `encrypt` .
+
+for exmaple --> 
+
+`echo "hello my name is moein"` >> greeting.txt
+
+`ansible-vault encrypt greeting.txt`
+
+then ask you password and confirm it .
+
+so you can see this message like `Encryption successful` .
+
+if you open the `greeting.txt` file , this file encrypted and has lots of numbers.
+
+## change the password of encrypted file
+
+we want to change the password of an encrypted file 
+
+in this case you can use option `rekey`.
+
+for exmaple --> 
+
+`ansible-vault rekey greeting.txt`
+
+then ask you `previous password` and `new password` and if you enter a correct value , print this message `Rekey successful`.
