@@ -34,3 +34,17 @@ you enter a password for vault password and confirm this password then a code ed
 
 save this file and exit then you can see a new file created like `vault.yml` with encrypted data .
 
+## Decrypt Files
+
+for example we have an encrypted file and we want to decrypt it .
+
+for decrypt files we use option `decrypt` .
+
+for exmaple --> 
+
+`ansible-vault decrypt vault.yml`
+
+and ask your vault password to decrypt it .
+
+so when you open this file we can see data that decrypted .
+
