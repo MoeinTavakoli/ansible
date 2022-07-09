@@ -20,7 +20,7 @@ this ability called `ansible-vault` and has several option to use it
   <li>rekey</li>
 </ul>
 
-## CreateNew encrypted Files
+## Create new encrypted Files
 
 lets create an encrypted file with ansible-valut.
 
@@ -31,4 +31,6 @@ for exmaple -->
 `ansible-vault create vault.yml`
 
 you enter a password for vault password and confirm this password then a code editor open that allow you to write something to encrypte it .
+
+save this file and exit then you can see a new file created like `vault.yml` with encrypted data .
 
