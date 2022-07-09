@@ -92,3 +92,8 @@ for exmaple -->
 `ansible-vault rekey greeting.txt`
 
 then ask you `previous password` and `new password` and if you enter a correct value , print this message `Rekey successful`.
+
+
+----
+
+[reference](https://www.digitalocean.com/community/tutorials/how-to-use-vault-to-protect-sensitive-ansible-data)
