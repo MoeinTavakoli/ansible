@@ -48,3 +48,17 @@ and ask your vault password to decrypt it .
 
 so when you open this file we can see data that decrypted .
 
+## View encrypted Files
+
+for example you want to just see decrypted data and you didnt want to change the file (change encrypted file to decrypt).
+
+In this case you can use option `view` .
+
+for exmaple --> 
+
+`ansible-vault view vault.yml`
+
+and ask your vault password to decrypt it and print it .
+
+**in this case didnt change your encrypted file**.
+
