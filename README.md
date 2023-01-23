@@ -59,7 +59,7 @@ mkdir -p .ssh
 
 We want to make secure connection on control machine and nodes so send public key of the control machine to all nodes 
 
-`ssh-copy-id -i id_rsa.pub USERNAME@IP-OR-HOSTNMAE`
+`ssh-copy-id -i ~/.ssh/id_rsa.pub USERNAME@IP-OR-HOSTNMAE`
 
 Now we have secure connection between control machine and nodes 
 
