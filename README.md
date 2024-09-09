@@ -80,8 +80,8 @@ Popular syntax is \
 ```ini
 [network]
 
-network-master-1.psg.network ansible_host=192.168.50.1 ansible_user=moeen.tavakoli
-network-slave-2.psg.network ansible_host=192.168.49.57 ansible_user=moeen.tavakoli
+network-master-1 ansible_host=192.168.50.1 ansible_user=moeen.tavakoli
+network-slave-2 ansible_host=192.168.49.57 ansible_user=moeen.tavakoli
 ```
 
 To check add groups and nodes use this command to see all nodes that you added 
